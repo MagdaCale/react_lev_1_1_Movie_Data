@@ -8,7 +8,10 @@ const Data = (props) =>{
             <p>{props.director}</p>
             <p>{props.duration}</p>
             <p>{props.rate}</p>
-            <p>{props.genre}</p>
+            <p>{props.genre.map(item => <li>{item}</li>)}</p>
+            {/* <div>{props.genre.map(item => <p>{item}</p>)}</div>
+ */}
+
         </div>
 
     )
