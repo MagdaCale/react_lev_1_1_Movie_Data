@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import movies from './components/Movie';
+import Data from './components/Data'
+import { v4 as uuidv4 } from 'uuid';
+uuidv4(); 
 
 function App() {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {movies.map((elt, i) =>
+        <Data 
+          key={uuidv4()}
+          title={elt.title}
+          year={elt.year}
+          director={elt.director}
+          duration={elt.duration}
+          genre={elt.genre}
+          rate={elt.rate}
+        />
+      )}
     </div>
   );
 }
